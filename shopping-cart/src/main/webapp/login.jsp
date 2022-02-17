@@ -12,7 +12,7 @@
 		<div class="card w-50 mx-auto my-5">
 			<div class="card-header text-center">User Login</div>
 
-			<form method="post" action="">
+			<form method="post" action="user-login">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email address</label> <input
 						type="email" class="form-control" name="login-email"
