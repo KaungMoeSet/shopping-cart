@@ -13,7 +13,7 @@
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active"><a class="nav-link"
 					href="index.jsp">Home </a></li>
-				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart</a></li>
+				<li class="nav-item"><a class="nav-link" href="cart.jsp">Cart<span class="badge badge-danger px1">${ cart_list.size() }</span></a></li>
 				<% if(request.getAttribute("auth") != null) { %>
 				<li class="nav-item"><a class="nav-link" href="orders.jsp">Orders</a></li>
 				<li class="nav-item"><a class="nav-link" href="log-out">Logout</a></li>

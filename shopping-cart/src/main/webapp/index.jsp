@@ -12,6 +12,12 @@ if (auth != null) {
 
 ProductDao pd = new ProductDao(DBConnection.getConnection());
 List<Product> products = pd.getAllProducts();
+
+@SuppressWarnings("unchecked")
+ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+if (cart_list != null) {
+	request.setAttribute("cart_list", cart_list);
+}
 %>
 <!DOCTYPE html>
 <html>
@@ -38,7 +44,7 @@ List<Product> products = pd.getAllProducts();
 						<h5 class="price">Price: <%=p.getPrice() %></h5>
 						<h5 class="category">Category: <%=p.getCategory() %></h5>
 						<div class="mt-3 d-flex justify-content-between">
-							<a href="#" class="btn btn-primary">Add to cart</a> <a href="#"
+							<a href="add-to-cart?id=<%= p.getId() %>" class="btn btn-dark">Add to cart</a> <a href="#"
 								class="btn btn-primary">Buy Now</a>
 						</div>
 
