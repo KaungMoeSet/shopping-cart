@@ -71,9 +71,30 @@ public class ProductDao {
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
-		}
-		
-		
+		}	
 		return products;
+	}
+	
+	public double getTotalCartPrice(ArrayList<Cart> cartList) {
+		double sum = 0;
+		
+		try {
+			if( cartList.size()> 0) {
+				for(Cart c: cartList) {
+					query = "select price from products where id=?";
+					pst = this.conn.prepareStatement(query);
+					pst.setInt(1, c.getId());
+					rs = pst.executeQuery();
+					
+					while(rs.next()) {
+						sum += rs.getDouble("price")*c.getQuantity();
+					}
+				}
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return sum;
 	}
 }
