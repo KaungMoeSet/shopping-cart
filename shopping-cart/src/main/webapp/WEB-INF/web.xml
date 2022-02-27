@@ -69,4 +69,14 @@
     <servlet-name>OrderNowServlet</servlet-name>
     <url-pattern>/OrderNowServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckOutServlet</display-name>
+    <servlet-name>CheckOutServlet</servlet-name>
+    <servlet-class>com.kaung.servlet.CheckOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckOutServlet</servlet-name>
+    <url-pattern>/CheckOutServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
