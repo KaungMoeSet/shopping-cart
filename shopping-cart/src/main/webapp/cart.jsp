@@ -9,6 +9,7 @@
 <%
 DecimalFormat dcf = new DecimalFormat("#.##");
 request.setAttribute("dcf", dcf);
+
 User auth = (User) request.getSession().getAttribute("auth");
 if (auth != null) {
 	request.setAttribute("auth", auth);
@@ -69,16 +70,17 @@ if (cart_list != null) {
 					<td><%= c.getCategory() %></td>
 					<td><%= dcf.format(c.getPrice()) %></td>
 					<td>
-						<form method="post" class="form-inline" action="">
+						<form method="post" class="form-inline" action="order-now">
 							<input type="hidden" name="id" value="<%= c.getId() %>" class="form-input">
-							<div class="form-group d-flex justify-content-between">
+							<div class="form-group d-flex justify-content-between w-50">
 								<a class="btn btn-sm btn-decre" href="quantity-inc-dec?action=dec&id=<%= c.getId() %>"><i
 									class="fas fa-minus-square"></i> </a> <input type="text"
-									name="quantity" class="form-control" value="<%= c.getQuantity() %>" readonly>
+									name="quantity" class="form-control w-50" value="<%= c.getQuantity() %>" readonly>
 								<a class="btn btn-sm btn-incre" href="quantity-inc-dec?action=inc&id=<%= c.getId() %>"><i
 									class="fas fa-plus-square"></i> </a>
 
 							</div>
+							<button type="submit" class="btn btn-primary btn-sm">Buy</button>
 						</form>
 					</td>
 					<td><a class="btn btn-sm btn-danger" href="remove-from-cart?id=<%= c.getId() %>">Remove</a></td>
