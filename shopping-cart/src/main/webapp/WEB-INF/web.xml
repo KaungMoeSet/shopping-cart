@@ -79,4 +79,14 @@
     <servlet-name>CheckOutServlet</servlet-name>
     <url-pattern>/CheckOutServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CancelOrderServlet</display-name>
+    <servlet-name>CancelOrderServlet</servlet-name>
+    <servlet-class>com.kaung.servlet.CancelOrderServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CancelOrderServlet</servlet-name>
+    <url-pattern>/CancelOrderServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
